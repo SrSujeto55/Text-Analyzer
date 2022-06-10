@@ -1,9 +1,6 @@
 package mx.unam.ciencias.edd;
 
-import java.sql.Ref;
 import java.util.Iterator;
-
-import javax.lang.model.element.Element;
 
 /**
  * <p>Clase para árboles binarios completos.</p>

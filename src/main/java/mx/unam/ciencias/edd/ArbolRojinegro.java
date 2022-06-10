@@ -1,6 +1,5 @@
 package mx.unam.ciencias.edd;
 
-import org.hamcrest.core.IsInstanceOf;
 
 /**
  * Clase para árboles rojinegros. Un árbol rojinegro cumple las siguientes

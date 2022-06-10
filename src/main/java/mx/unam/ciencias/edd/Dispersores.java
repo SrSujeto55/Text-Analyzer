@@ -1,6 +1,5 @@
 package mx.unam.ciencias.edd;
 
-import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Clase para métodos estáticos con dispersores de bytes.

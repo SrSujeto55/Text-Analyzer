@@ -2,9 +2,7 @@ package mx.unam.ciencias.edd;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import java.util.ResourceBundle.Control;
 
-import mx.unam.ciencias.edd.ArbolBinario.Vertice;
 
 /**
  * Clase para gráficas. Una gráfica es un conjunto de vértices y aristas, tales

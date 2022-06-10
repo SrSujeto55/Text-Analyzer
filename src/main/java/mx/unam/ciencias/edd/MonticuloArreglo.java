@@ -82,15 +82,15 @@ public class MonticuloArreglo<T extends ComparableIndexable<T>>
         return min;
     }
 
-    private void intercambia(T a, T b){
-        int A = a.getIndice();
-        int B = b.getIndice();
+    // private void intercambia(T a, T b){
+    //     int A = a.getIndice();
+    //     int B = b.getIndice();
 
-        arreglo[A] = b;
-        arreglo[A].setIndice(A);
-        arreglo[B] = a;
-        arreglo[B].setIndice(B);
-    }
+    //     arreglo[A] = b;
+    //     arreglo[A].setIndice(A);
+    //     arreglo[B] = a;
+    //     arreglo[B].setIndice(B);
+    // }
 
     /**
      * Regresa el <i>i</i>-ésimo elemento del arreglo.
