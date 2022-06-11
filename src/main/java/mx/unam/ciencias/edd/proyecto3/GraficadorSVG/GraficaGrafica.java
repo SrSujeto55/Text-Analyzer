@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd.proyecto2.GraphSVG;
+package mx.unam.ciencias.edd.proyecto3.GraficadorSVG;
 
 import mx.unam.ciencias.edd.Grafica;
 import mx.unam.ciencias.edd.Lista;
