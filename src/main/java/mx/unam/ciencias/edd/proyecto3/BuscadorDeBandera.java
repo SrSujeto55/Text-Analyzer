@@ -5,12 +5,6 @@ package mx.unam.ciencias.edd.proyecto3;
 public class BuscadorDeBandera{
 
     private boolean contieneBandera;
-
-    /**
-     * Cosntructor privado sin parámetros para evitar la instanciación de la clase sin parámetros
-     */
-    private BuscadorDeBandera(){}
-
     /**
      * Constructor de la clase, cuando se instancia con un arreglo, busca en cada entrada la bandera
      * "-o", si no la encuentra inicializa la variable global como false

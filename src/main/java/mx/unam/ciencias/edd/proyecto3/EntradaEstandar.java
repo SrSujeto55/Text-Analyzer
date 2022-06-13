@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
-import mx.unam.ciencias.edd.Conjunto;
+import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
 /**
  * Clase para la entrada estandar del programa
@@ -25,7 +25,7 @@ public class EntradaEstandar {
      * @param nombreArchivo El nombre del archivo que leermos con @lecuraArch
      * @return El conjunto que contiene el conteo de todas las palabras en el archivo recibido
      */
-    public Conjunto<String> getConteo(String nombreArchivo){
+    public Diccionario<String, Palabra> getConteo(String nombreArchivo){
         ls = lecturaArch(nombreArchivo);
         ContadorDePalabras cont = new ContadorDePalabras(ls);
         return cont.getConteo();
