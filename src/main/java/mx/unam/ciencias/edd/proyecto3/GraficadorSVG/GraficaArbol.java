@@ -21,6 +21,7 @@ public abstract class GraficaArbol<T> extends GrafEstructura<T> {
     private String conexiones = "";
     private String verticeSTR = "";
     private String texto = "";
+    private String etiqueta;
     
     /**
      * Clase interna privada para asignar coordenadas y guardarlas para su uso posterior
@@ -38,11 +39,12 @@ public abstract class GraficaArbol<T> extends GrafEstructura<T> {
      * Cosntructor unico que inicializa los valores importantes y asigna un arbol
      * @param data Un arbol Binario y sus posibles extensiones
      */
-    public GraficaArbol(ArbolBinario<T> data, int borde){
+    public GraficaArbol(ArbolBinario<T> data, int borde, String etiqueta){
         AB = data;
         bordes = borde;
         cambioY = 50;
         cambioX = 30;
+        this.etiqueta = etiqueta;
     }
 
 
@@ -62,7 +64,7 @@ public abstract class GraficaArbol<T> extends GrafEstructura<T> {
         Calcula();
         GraficaStruc();
         return SVGraph.declaracionXML() + "\n" +
-               SVGraph.empienzaSVG(anchoSVG, alturaSVG) + "\n" +
+               SVGraph.empienzaSVG(anchoSVG, alturaSVG, etiqueta) + "\n" +
                conexiones + "\n" +
                verticeSTR + "\n" +
                texto + "\n" +

@@ -21,6 +21,8 @@ public class Graficador {
     private int palRestantes;
     /** El número total de palabras evaluadas, para tener un registro de porcentaje */
     private int total;
+
+    private Diccionario<String, Palabra> allWords;
     
     /**
      * Constructor único que nos inicializa la variable data
@@ -31,6 +33,11 @@ public class Graficador {
         data = palabrasComunes.getPalabrasFrecuentes(15);
         palRestantes = palabrasComunes.getElementosRestantes();
         total = palabrasComunes.getTotalPalabras();
+        allWords = contador;
+    }
+
+    public Diccionario<String, Palabra> getallWords(){
+        return allWords;
     }
 
     /**
@@ -65,7 +72,7 @@ public class Graficador {
      * @return El String representante de la estructura en SVG
      */
     public String getGraficaBarras(){
-        graficador = new GraficaBarras<>(data, palRestantes, total);
+        graficador = new GraficaBarras<>(data, palRestantes, total, 700);
         return graficador.getGrafica();
     }
 

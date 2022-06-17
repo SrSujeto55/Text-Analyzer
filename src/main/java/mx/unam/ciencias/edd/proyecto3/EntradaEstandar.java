@@ -15,10 +15,6 @@ public class EntradaEstandar {
     /**La lista para agregar cada linea del archivo */
     private Lista<Linea> ls;
 
-    /**
-     * Constructor único de clase
-     */
-    public EntradaEstandar(){}
 
     /**
      * método para conseguir el conteo de palabras de un archivo

@@ -9,7 +9,7 @@ import mx.unam.ciencias.edd.VerticeArbolBinario;
 public class GraficaABRojinegro<T extends Comparable<T>> extends GraficaArbol<T> {
 
     public GraficaABRojinegro(ArbolRojinegro<T> arbol, int borde) {
-        super(arbol, borde);
+        super(arbol, borde, "#ABrojinegro");
     }
 
     /**

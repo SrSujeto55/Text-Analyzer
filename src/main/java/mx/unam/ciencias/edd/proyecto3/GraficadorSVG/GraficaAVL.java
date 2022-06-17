@@ -9,7 +9,7 @@ import mx.unam.ciencias.edd.VerticeArbolBinario;
 public class GraficaAVL<T extends Comparable<T>> extends GraficaArbol<T> {
 
     public GraficaAVL(ArbolAVL<T> data, int borde) {
-        super(data, borde);
+        super(data, borde, "#ABAVL");
     }
 
     /**

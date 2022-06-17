@@ -146,13 +146,13 @@ public class Grafica<T> implements Coleccion<T> {
         }
     }
 
-    /* Interface para poder usar lambdas al buscar el elemento que sigue al
-     * reconstruir un camino. */
-    @FunctionalInterface
-    private interface BuscadorCamino {
-        /* Regresa true si el vértice se sigue del vecino. */
-        public boolean seSiguen(Grafica.Vertice v, Grafica.Vecino a);
-    }
+    // /* Interface para poder usar lambdas al buscar el elemento que sigue al
+    //  * reconstruir un camino. */
+    // @FunctionalInterface
+    // private interface BuscadorCamino {
+    //     /* Regresa true si el vértice se sigue del vecino. */
+    //     public boolean seSiguen(Grafica.Vertice v, Grafica.Vecino a);
+    // }
 
     /* Vértices. */
     private Diccionario<T, Vertice> vertices;

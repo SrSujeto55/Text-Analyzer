@@ -25,8 +25,8 @@ public  class SVGraph {
      * @param y al largo del archivo
      * @return el String referente a las dimensiones del archivo
      */
-    public static String empienzaSVG(int x, int y) {
-        return String.format("<svg width='%d' height='%d'> \n <g>", x, y);
+    public static String empienzaSVG(int x, int y, String etiqueta) {
+        return String.format("<svg " + etiqueta + " width='%d' height='%d'> \n <g>", x, y);
     }
 
     /**

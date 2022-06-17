@@ -4,6 +4,7 @@ import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto3.Palabra;
 
 public class GraficaPastel<T> extends GraficadorGraficas<T>{
+    /**ALoot af varaibles */
     private Lista<Palabra> data;
     private String texto = "";
     private String circulo = "";
@@ -12,12 +13,16 @@ public class GraficaPastel<T> extends GraficadorGraficas<T>{
     private double desplazamientoRadian = 0;
     private double centro;
     private int radio;
+    private int restantes;
+    private int totales;
 
 
     public GraficaPastel(Lista<Palabra> topN, int restantes, int totales, int largoAncho){
         super(topN, restantes, totales);
         this.largoAncho = largoAncho;
-        data = getListaPorcentaje();
+        data = getFixedTop();
+        this.restantes = restantes;
+        this.totales = totales;
     }
 
      /**
@@ -27,7 +32,7 @@ public class GraficaPastel<T> extends GraficadorGraficas<T>{
     protected String graficaT() {
         Calcula();
         return SVGraph.declaracionXML() + "\n" +
-               SVGraph.empienzaSVG(largoAncho, largoAncho) + "\n" +
+               SVGraph.empienzaSVG(largoAncho, largoAncho, "#pastel") + "\n" +
                circulo + "\n" +
                lineas  + "\n" +
                texto + "\n" +
@@ -59,6 +64,11 @@ public class GraficaPastel<T> extends GraficadorGraficas<T>{
             lineas += SVGraph.creaLineaG(centro, centro, x, y, 2, "black");
             texto += SVGraph.creaTextoG(word.toString(), "yellow", 20, x, y);
         }
+        double porcentajeRest =  (((restantes * totales)/100) * 360)/100;
+        desplazamientoRadian += (((porcentajeRest * 360)/100)*Math.PI)/180;
+        double x = centro - (Math.cos(desplazamientoRadian) * radio);
+        double y = centro - (Math.sin(desplazamientoRadian) * radio);
+        texto += SVGraph.creaTextoG("*Otros*", "yellow", 20, x, y);
     }
 
     /**

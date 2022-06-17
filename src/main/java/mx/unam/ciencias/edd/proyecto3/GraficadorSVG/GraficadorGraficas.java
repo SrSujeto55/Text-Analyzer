@@ -7,7 +7,6 @@ import mx.unam.ciencias.edd.proyecto3.Palabra;
  */
 public abstract class GraficadorGraficas<T> extends GrafEstructura<T> {
     private Lista<Palabra> topN;
-    private double prtRestante;
 
     /**
      * Constructor único que extenderán las demás clases, en este método se calculan los porcentajes necesarios de 
@@ -21,7 +20,6 @@ public abstract class GraficadorGraficas<T> extends GrafEstructura<T> {
             word.setPorcent((word.getFrecuencia()/totales)*100); 
         }
         this.topN = topN;
-        prtRestante = ((restantes/totales) *100);
     }
     
     /**
@@ -41,26 +39,19 @@ public abstract class GraficadorGraficas<T> extends GrafEstructura<T> {
     }
 
     /**
+     * Regresa la lista de palabras con su respectivo porcentaje
+     * @return lo de arriba
+     */
+    protected Lista<Palabra> getFixedTop(){
+        return topN;
+    }
+
+    /**
      * Metodo que se DEBE sobreescribir regresando la  forma en la que se presenta el SVG
      */
     @Override
     protected String graficaTCuerpoOnly(){
         return null;
     }
-    
-    /**
-     * Regresa la Lista de Palabras a la clase que la extienda
-     * @return La lista de palabras de la clase
-     */
-    public Lista<Palabra> getListaPorcentaje(){
-        return topN;
-    }
 
-    /**
-     * Regresa el porcentaje que representa el número totol de palabras restantes
-     * @return La variable de clase prtRestante
-     */
-    public double getprtRestante(){
-        return prtRestante;
-    }
 }

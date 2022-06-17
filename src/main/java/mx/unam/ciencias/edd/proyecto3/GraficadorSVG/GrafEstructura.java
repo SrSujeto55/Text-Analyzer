@@ -50,7 +50,7 @@ public abstract class GrafEstructura<T>{
      */
     public String graficaVacia(){
         return SVGraph.declaracionXML() + 
-                SVGraph.empienzaSVG(200, 200) +
+                SVGraph.empienzaSVG(200, 200, "#Empty404") +
                 SVGraph.creaLinea(0, 0, 200, 200, 2, "#0185d1") + "\n" + 
                 SVGraph.creaLinea(200, 0, 0, 200, 2, "#ff9900") + "\n" + 
                 SVGraph.creaCirculo(0, 0, 20, "#ff9900", "#ff9900") + "\n" + 

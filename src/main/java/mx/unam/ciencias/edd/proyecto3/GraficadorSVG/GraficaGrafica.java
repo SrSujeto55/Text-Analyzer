@@ -24,6 +24,7 @@ public class GraficaGrafica<T> extends GrafEstructura<T> {
     private String text = "";
     private Lista<coord> Coordenados = new Lista<>();
     private Lista<VerticeGrafica<T>> vert = new Lista<>();
+    private int multiplicador;
 
 
     /**
@@ -44,10 +45,11 @@ public class GraficaGrafica<T> extends GrafEstructura<T> {
     /**
      * Constructor unico para la construccion del SVG de la grafica
      */
-    public GraficaGrafica(Lista<T> data){
+    public GraficaGrafica(Lista<T> data, int multiplicador){
         graph = construyeGrafica(data);
         elementos = graph.getElementos();
         graph.paraCadaVertice((v) -> vert.agregaFinal(v));
+        this.multiplicador = multiplicador;
     }
 
     /**
@@ -77,7 +79,7 @@ public class GraficaGrafica<T> extends GrafEstructura<T> {
     protected String graficaT() throws IllegalArgumentException{
         Calcula();
         return SVGraph.declaracionXML() + "\n" + 
-               SVGraph.empienzaSVG(DimensionesCuadradas, DimensionesCuadradas) + "\n" + 
+               SVGraph.empienzaSVG(DimensionesCuadradas * multiplicador, DimensionesCuadradas * multiplicador, "#grafica") + "\n" + 
                aristas + "\n" +
                vertices + "\n" + 
                text + "\n" + 
@@ -89,8 +91,8 @@ public class GraficaGrafica<T> extends GrafEstructura<T> {
      * ALERTA POR METODO CUADRATICO
      */
     private void Calcula(){
-        radioCirculo = (int) Math.ceil((tamanoLetra*3)/2);
-        DimensionesCuadradas = elementos*radioCirculo*2 + 2*margen;
+        radioCirculo = ((int) Math.ceil((tamanoLetra*3)/2)) * multiplicador;
+        DimensionesCuadradas = (elementos*radioCirculo*2 + 2*margen) * multiplicador;
         Centro = (int) Math.ceil(DimensionesCuadradas/2);
         cRadio = (int) Math.ceil((DimensionesCuadradas - margen*2)/2);
         incrementoRad = ((360)/elementos)*(Math.PI/180);
